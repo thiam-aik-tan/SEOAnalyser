@@ -1,0 +1,37 @@
+﻿@model SEOAnalyserWeb.Models.AnalysisModel
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="form-group">
+    <h2>SEO Analyser</h2>
+</div>
+@using (Html.BeginForm("Index", "Home", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        @Html.Label("Analysis Options")
+        <div>
+            <div class="form-check">
+                @Html.CheckBoxFor(model => model.WordOccurenceOnPage, new { @class = "form-check-input" })
+                @Html.LabelFor(model => model.WordOccurenceOnPage, "Number Of Stop-Word Occurences On The Page", new { @class = "form-check-label" })
+            </div>
+            <div class="form-check">
+                @Html.CheckBoxFor(model => model.WordOccurenceOnMeta, new { @class = "form-check-input" })
+                @Html.LabelFor(model => model.WordOccurenceOnMeta, "Number Of Stop-Word Occurences In Meta Tags", new { @class = "form-check-label" })
+            </div>
+            <div class="form-check">
+                @Html.CheckBoxFor(model => model.ExternalLinkOccurence, new { @class = "form-check-input" })
+                @Html.LabelFor(model => model.ExternalLinkOccurence, "Number Of External Links In The Text", new { @class = "form-check-label" })
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.TextAreaFor(m => m.Text, new { @class = "form-control", @rows = 5, @placeholder = "Please enter text to analyse" })
+        @Html.ValidationMessageFor(m => m.Text, "", new { @class = "text-danger" })
+    </div>
+    <input type="submit" class="btn btn-primary" value="Analyse" />
+}

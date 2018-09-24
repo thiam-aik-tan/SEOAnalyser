@@ -3,3 +3,12 @@
 ################################################################################
 
 /SEOAnalyser.Components/bin/Debug/netstandard2.0
+/SEOAnalyser.Components/obj
+/SEOAnalyserWeb/.vs
+/SEOAnalyserWeb/packages
+/SEOAnalyserWeb/SEOAnalyserWeb/bin
+/SEOAnalyserWeb/SEOAnalyserWeb/obj/Debug
+/SEOAnalyserWeb/SEOAnalyserWeb/SEOAnalyserWeb.csproj.user
+/SEOAnalyserWeb/SEOAnalyserWeb.Tests/bin/Debug
+/SEOAnalyserWeb/SEOAnalyserWeb.Tests/obj/Debug
+/SEOAnalyserWeb/SEOAnalyserWeb.Tests/SEOAnalyserWeb.Tests.csproj.user

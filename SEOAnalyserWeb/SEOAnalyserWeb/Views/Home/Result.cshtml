@@ -1,0 +1,123 @@
+﻿@model SEOAnalyserWeb.Models.ResultModel
+@{
+    ViewBag.Title = "Result";
+}
+@section styles {
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+}
+@section scripts {
+    <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+}
+<h2>@ViewBag.Title.</h2>
+
+@if (Model.WordOccurenceOnText.Count > 0)
+{
+    <table id="tblText" class="display">
+        <caption><h4>Text Analysis</h4></caption>
+        <thead>
+            <tr>
+                <th>Stop-word</th>
+                <th>Number Of Occurences</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.WordOccurenceOnText)
+            {
+                <tr>
+                    <td>@item.Key</td>
+                    <td>@item.Value</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@if (Model.WordOccurenceOnPage.Count > 0)
+{
+    <table id="tblBody" class="display">
+        <caption><h4>Html Body Analysis</h4></caption>
+        <thead>
+            <tr>
+                <th>Stop-word</th>
+                <th>Number Of Occurences</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.WordOccurenceOnPage)
+            {
+                <tr>
+                    <td>@item.Key</td>
+                    <td>@item.Value</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@if (Model.WordOccurenceOnMeta.Count > 0)
+{
+    <table id="tblMeta" class="display">
+        <caption><h4>Html MetaTag Analysis</h4></caption>
+        <thead>
+            <tr>
+                <th>Stop-word</th>
+                <th>Number Of Occurences</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.WordOccurenceOnMeta)
+            {
+                <tr>
+                    <td>@item.Key</td>
+                    <td>@item.Value</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@if (Model.ExternalLinkOccurence.Count > 0)
+{
+    <table id="tblLink" class="display">
+        <caption><h4>External Link Analysis</h4></caption>
+        <thead>
+            <tr>
+                <th>External Link</th>
+                <th>Number Of Occurences</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.ExternalLinkOccurence)
+            {
+                <tr>
+                    <td>@item.Key</td>
+                    <td>@item.Value</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#tblText').DataTable({
+            "paging": false,
+            "searching": false
+        });
+
+        $('#tblBody').DataTable({
+            "paging": false,
+            "searching": false
+        });
+
+        $('#tblMeta').DataTable({
+            "paging": false,
+            "searching": false
+        });
+
+        $('#tblLink').DataTable({
+            "paging": false,
+            "searching": false
+        });
+    });
+</script>
