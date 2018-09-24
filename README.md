@@ -15,4 +15,5 @@ Implement simplified SEO Analyser: web application that performs a simple SEO an
    b) Number of Stop-Word Occurences In Meta Tags
    c) Number Of External Links In The Text
 3. Then, enter the text to analyse or a website url for analysis.
-4. Lastly, Click 'Analyse' button to run SEO Analyser.
+4. Lastly, click 'Analyse' button to run SEO Analyser.
+5. The analysis result will be displayed in several tabular format, based on the [Analysis Options].
